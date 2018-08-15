@@ -136,7 +136,7 @@ void main()
 	  if(PORTBbits.RB4 == 1)				//Checking if user input from switch indicating a change to watchdg mode
           {
               //Watchdog mode
-              watchdogEngage();					//Red-Blue-Red-Blue flashing lights
+              watchdogEngage();				//Red-Blue-Red-Blue flashing lights
               state_indicator = 1;				//set state indicator variable to watchdog value
               sendState(state_indicator);			//send change of variable
 
