@@ -10,6 +10,8 @@ Each mode results in different LED outputs for the user to know the current mode
 
 ## LivenessAnalysis.cpp
 
+**As noted in the placeholder ".txt" file, please contact me at cwlong@okstate.edu or linkedin.com/in/chad-long-3b1543100 to see this code** 
+
 This program performs a liveness analysis in C++ on an instruction set produced by LLVM. Information on LLVM can be found at the following links:
 
 http://llvm.org
