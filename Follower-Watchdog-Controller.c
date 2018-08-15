@@ -120,31 +120,31 @@ char* string;
 void main()
 {
         int state_indicator = 0;				//1 for watchdog mode, 0 for follower mode
-	    init();									//method to initialize oscillator, I/O, and interrupts
-        usart_init();							//method to set baud rate, TX, RX, and interrupt communication
+	init();							//method to initialize oscillator, I/O, and interrupts
+        usart_init();						//method to set baud rate, TX, RX, and interrupt communication
 
         //loop checking for user input
         while(1)
         {
-			Delay1TCY();
+	    Delay1TCY();
 			
             for(in=0;in<1;in++){
                 Delay1TCY();
-                FOLLOW();						//initialize IR frequency for follower mode
+                FOLLOW();					//initialize IR frequency for follower mode
                 }
 
-		  if(PORTBbits.RB4 == 1)				//Checking if user input from switch indicating a change to watchdg mode
+	  if(PORTBbits.RB4 == 1)				//Checking if user input from switch indicating a change to watchdg mode
           {
               //Watchdog mode
               watchdogEngage();					//Red-Blue-Red-Blue flashing lights
               state_indicator = 1;				//set state indicator variable to watchdog value
-              sendState(state_indicator);		//send change of variable
+              sendState(state_indicator);			//send change of variable
 
           }
           else if(PORTBbits.RB4 == 0)
           {
               //Follower mode
-              follower();						//Green-Purple-Green-Purple flashing lights
+              follower();					//Green-Purple-Green-Purple flashing lights
               state_indicator = 0;				//set state indicator variable to follower value
               sendState(state_indicator);
 
@@ -216,13 +216,13 @@ void usart_init()
 void watchdogEngage()
 {
     //turn LED off
-    RED_LEDS_OFF								//defined label to set the microcontroller output pins to turn Red off for the RGB LED
-    BLUE_LEDS_OFF								//defined label to set the microcontroller output pins to turn Blue off for the RGB LED
-    GREEN_LEDS_OFF								//defined label to set the microcontroller output pins to turn Blue off for the RGB LED
+    RED_LEDS_OFF				//defined label to set the microcontroller output pins to turn Red off for the RGB LED
+    BLUE_LEDS_OFF				//defined label to set the microcontroller output pins to turn Blue off for the RGB LED
+    GREEN_LEDS_OFF				//defined label to set the microcontroller output pins to turn Blue off for the RGB LED
 
     //Watchdog Sequence R-B-R-B
     RED_LEDS_ON																	//defined label to set the microcontroller output pins to turn Red on for the RGB LED
-    for(delay_count = 0; delay_count < delay_cycles; delay_count++)				//flexible delay loop
+    for(delay_count = 0; delay_count < delay_cycles; delay_count++)			//flexible delay loop
     {
     }
     RED_LEDS_OFF
