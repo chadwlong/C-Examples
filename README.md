@@ -19,7 +19,7 @@ http://releases.llvm.org/3.6.2/docs/GettingStarted.html
 http://releases.llvm.org/3.6.2/docs/ProgrammersManual.html
 
 A very simple program, approximately 5 lines, produced the instruction set in this file and is referenced in DataflowAnalysis seen at the beginning of the code. **I specifically wrote the code for lines 15 - 132 with comments indicating the start and end of "CHAD'S CODE."** This code involves a simple use of set vectors and maps with pointers and derefences to accomplish the analysis.
-Liveness analysis involves analyzinf an instruction chain backwards to find out which variables are live at a certain instruction in the execution of a program. This can be helpful in determining the minimum number of registers needed for a program to store values. Please read about liveness analysis here: https://en.wikipedia.org/wiki/Live_variable_analysis.
+Liveness analysis involves analyzing an instruction chain backwards to find out which variables are live at a certain instruction in the execution of a program. This can be helpful in determining the minimum number of registers needed for a program to store values. Please read about liveness analysis here: https://en.wikipedia.org/wiki/Live_variable_analysis.
 
 ## ReachDefAnalysis.cpp
 
