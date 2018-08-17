@@ -1,4 +1,4 @@
-This file is a placeholder for my ReachDefAnalysis.cpp file using C++ on top of the LLVM environment.
+This file is a placeholder for my reaching definition analysis file using C++ on top of the LLVM environment.
 
 I wrote this code for an assignment in my Software Analysis and Test class for my Master's program at the Georgia Institute of Technology.
 
